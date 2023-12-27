@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Red Hat Text", sans-serif;
+}
+
+body {
+  position: relative;
+  background-image: url("/images/bg-stars.svg");
+  background-color: hsl(235, 16%, 14%);
+  text-align: center;
+  padding-top: 100px;
+  height: 100vh;
+}
+
+.info-header {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 5px;
+  width: 75%;
+  margin: auto;
+  padding-bottom: 50px;
+}
+
+.countdown {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.countdown p {
+  color: #969696;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.time-section {
+  text-align: center;
+  font-size: 16px;
+  /* font-weight: 700; */
+}
+
+.time-segment {
+  width: 60px;
+  font-size: 33px;
+  font-weight: 900;
+  height: 49.5px;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 5px 3px#111;
+}
+
+.segment-display,
+.segment-overlay {
+  position: relative;
+  height: 100%;
+  color: hsl(345, 95%, 68%);
+}
+
+.segment-display__top,
+.segment-display__bottom {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.left-semicircle,
+.right-semicircle {
+  position: absolute;
+  width: 6px;
+  height: 10px;
+  top: 44%;
+  background-color: #111;
+}
+
+.top-right,
+.top-left,
+.bottom-right,
+.bottom-left {
+  /* display: none; */
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #111;
+  z-index: 100;
+}
+
+.left-semicircle {
+  border-radius: 0 10px 10px 0;
+  left: 0;
+}
+
+.right-semicircle {
+  border-radius: 10px 0 0 10px;
+  right: 0;
+}
+
+.top-right {
+  border-radius: 0 5px 0 0;
+  bottom: -2px;
+  left: 0;
+}
+
+.top-left {
+  border-radius: 5px 0 0 0;
+  bottom: -2px;
+  right: 0;
+}
+
+.bottom-right {
+  border-radius: 0 0 5px 0;
+  top: -2px;
+  left: 0;
+}
+
+.bottom-left {
+  border-radius: 0 0 0 5px;
+  top: -2px;
+  right: 0;
+}
+
+.segment-display__top {
+  background-color: hsl(236, 21%, 26%);
+  line-height: 1.5;
+}
+
+.segment-display__bottom {
+  background-color: hsl(236, 23%, 35%);
+  line-height: 0;
+}
+
+.segment-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+}
+
+.segment-overlay__top,
+.segment-overlay__bottom {
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.segment-overlay__top {
+  background-color: hsl(236, 21%, 26%);
+  line-height: 1.5;
+  transform-origin: bottom;
+  border-top: 1px solid hsl(236, 9%, 32%);
+  border-right: 1px solid hsl(236, 9%, 32%);
+  border-left: 1px solid hsl(236, 9%, 32%);
+}
+
+.segment-overlay__bottom {
+  background-color: hsl(236, 23%, 35%);
+  line-height: 0;
+  bottom: 0;
+  border-top: 1px solid hsl(236, 9%, 35%);
+  transform-origin: top;
+}
+
+.segment-display.flip .segment-overlay__top {
+  animation: flip-top 0.9s linear;
+}
+
+.segment-display.flip .segment-overlay__bottom {
+  animation: flip-bottom 0.9s linear;
+}
+
+@keyframes flip-top {
+  50%,
+  100% {
+    transform: rotateX(-90deg);
+  }
+}
+
+@keyframes flip-bottom {
+  0%,
+  50% {
+    transform: rotateX(90deg);
+  }
+}
+
+.bg-hills {
+  position: absolute;
+  background-image: url("./images/pattern-hills.svg");
+  width: 110%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: 0;
+  left: 0;
+}
+
+.bg-hills > img {
+  margin-top: 100px;
+  padding: 1rem;
+  width: 60px;
+  height: 60px;
+}
+
+.attribution {
+  position: absolute;
+  font-size: 11px;
+  text-align: center;
+  bottom: 10px;
+  width: 100%;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 32rem) {
+  .time-segment {
+    width: 100px;
+    font-size: 60px;
+    font-weight: 900;
+    height: 90px;
+  }
+
+  .countdown p {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .info-header {
+    font-size: 30px;
+  }
+
+  .time-segment {
+    width: 130px;
+    font-size: 80px;
+    font-weight: 900;
+    height: 120.21px;
+  }
+
+  .countdown p {
+    font-size: 14px;
+  }
+
+  .left-semicircle,
+  .right-semicircle {
+    top: 46%;
+  }
+
+  .bg-hills {
+    height: 250px;
+  }
+}
