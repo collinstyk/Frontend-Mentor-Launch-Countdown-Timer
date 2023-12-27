@@ -11,7 +11,7 @@ body {
   background-color: hsl(235, 16%, 14%);
   text-align: center;
   padding-top: 100px;
-  height: 80vh;
+  height: 84vh;
 }
 
 .info-header {
@@ -218,6 +218,10 @@ body {
 }
 
 @media (min-width: 32rem) {
+  body {
+    height: 90vh;
+  }
+  
   .time-segment {
     width: 100px;
     font-size: 60px;
@@ -231,6 +235,10 @@ body {
 }
 
 @media (min-width: 1000px) {
+body {
+  height: 100vh;
+}
+  
   .info-header {
     font-size: 30px;
   }
