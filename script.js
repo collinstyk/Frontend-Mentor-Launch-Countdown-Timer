@@ -1,6 +1,6 @@
 "use strict";
 
-const targetDate = "2024-01-01T00:00:00";
+const targetDate = "2024-03-03T00:00:00";
 
 const infoHeader = document.querySelector(".info-header");
 const segmentLabels = document.querySelectorAll(".segment-label");
