@@ -122,6 +122,13 @@ const updateAllSegments = function () {
   updateTimeSection("minutes", timeRemainingBits.minutes);
   updateTimeSection("seconds", timeRemainingBits.seconds);
 
+   if (timeRemainingBits.complete) {
+    updateTimeSection("days", "00");
+    updateTimeSection("hours", "00");
+    updateTimeSection("minutes", "00");
+    updateTimeSection("seconds", "00");
+  }
+
   return timeRemainingBits.complete;
 };
 
